@@ -42,8 +42,8 @@ return array(
                 'options' => array(
                     'route'    => '/home',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'SanAuth\Controller',
-                        'controller'    => 'Dashboard',
+                        '__NAMESPACE__' => 'Onestop\Controller',
+                        'controller'    => 'Index',
                         'action'        => 'index',
                     ),
                 ),
