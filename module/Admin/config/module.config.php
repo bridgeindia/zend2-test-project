@@ -15,7 +15,22 @@ return array(
 	
 	'router' => array(
         'routes' => array(
-            'aboutus' => array(
+            'category' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/admin/category[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Admin\Controller\Category',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+			
+			'aboutus' => array(
                 'type'    => 'segment',
                 'options' => array(
                     'route'    => '/aboutus[/:action][/:id]',
@@ -29,6 +44,7 @@ return array(
                     ),
                 ),
             ),
+			
             'employee' => array(
                 'type'    => 'segment',
                 'options' => array(
