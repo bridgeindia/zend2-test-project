@@ -1,0 +1,33 @@
+<?php 
+$title = 'Edit Category';
+$this->headTitle($title);
+?>
+<div class="main-nav">
+    <ul class="nav">
+        <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+        <li class="active"><a href="<?php echo $this->url('category') ?>"><?php echo $this->translate('Category') ?></a></li>
+        <li class="active"><a href="<?php echo $this->url('employee') ?>"><?php echo $this->translate('Employee') ?></a></li>
+        <li class="active"><a href="<?php echo $this->url('message') ?>"><?php echo $this->translate('Messages ') ?></a></li>
+        <li class="logout"><a href="<?php echo $this->url('login/process', array('action'=>'logout')); ?>">Logout</a></li>
+        <li class="welcome-user">Hi Admin</li>
+    </ul>
+</div><!--/.nav-collapse -->
+<div class="content">
+    <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+    <?php
+    $form = $this->form;
+    $form->setAttribute('action',$this->url('category', array(
+        'action' =>'edit',
+        'id' => $this->id
+    )));
+    $form->prepare();
+
+    echo $this->form()->openTag($form);
+    echo $this->formHidden($form->get('id'));
+    echo $this->formRow($form->get('category'));
+    echo $this->formSubmit($form->get('CatSub'));
+    //echo $this->formCollection($form);
+    echo $this->form()->closeTag($form);
+    ?>
+</div>

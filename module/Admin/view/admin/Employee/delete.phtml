@@ -1,0 +1,26 @@
+<?php
+/*
+ * to delete an employee
+ */
+$title = "Delete Employee";
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    Are you sure you want to delete <?php echo $this->escapeHtml($employee->emp_name); ?>?
+</p>
+    
+<?php
+$url = $this->url('employee', array(
+    'action' => 'delete',
+    'id' => $this->emp_id
+));
+
+?>
+<form method="post" action ="<?php echo $url; ?>" >
+    <div>
+        <input type="hidden" value="<?php echo $this->emp_id; ?>" name="emp_id"/>
+        <input type="submit" value="Yes" name="del" />
+        <input type="submit" value="No" name="del" />
+    </div>
+</form>

@@ -1,0 +1,49 @@
+<?php
+$title = 'Employees';
+$this->headTitle($title);
+?>
+<div class="main-nav">
+    <ul class="nav">
+        <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+        <li class="active"><a href="<?php echo $this->url('category') ?>"><?php echo $this->translate('Category') ?></a></li>
+        <li class="active"><a href="<?php echo $this->url('employee') ?>"><?php echo $this->translate('Employee') ?></a></li>
+        <li class="active"><a href="<?php echo $this->url('message') ?>"><?php echo $this->translate('Messages ') ?></a></li>
+        <li class="active"><a href=""><?php echo $this->translate('Attendance ') ?></a></li>
+        <li class="logout"><a href="<?php echo $this->url('login/process', array('action'=>'logout')); ?>">Logout</a></li>
+        <li class="welcome-user">Hi Admin</li>
+    </ul>
+</div><!--/.nav-collapse -->
+<div class="secondary-nav">
+    <ul>
+        <li class="active"><a href="<?php echo $this->url('employee', array('action'=>'add'));?>">Add new employee </a></li>
+        <li class="active"><a href="<?php echo $this->url('employee', array('action'=>'search'));?>">Search employee</a></li>
+        <li class="active"><a href="<?php echo $this->url('employee', array('action'=>'index'));?>">View all employees</a></li>
+    </ul>
+</div>
+<div class="content">
+    <h1><?php echo $this->escapeHtml($title); ?></h1>
+    <table class="table">
+    <tr>
+        <th>#</th>
+        <th>Employee Name</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    </tr>
+    <?php $num = 1; ?>
+    <?php foreach ($employees as $employee) : ?>
+    <tr>
+        <td><?php echo $num; ?></td>
+        <td><?php echo $this->escapeHtml($employee->emp_name);?></td>
+        <td>
+            <a href="<?php echo $this->url('employee',
+                array('action'=>'edit', 'id' => $employee->emp_id));?>">Edit</a>
+        </td>
+        <td>
+            <a href="<?php echo $this->url('employee',
+                array('action'=>'delete', 'id' => $employee->emp_id));?>">Delete</a>
+        </td>
+    </tr>
+    <?php $num++; ?>
+    <?php endforeach; ?>
+    </table>
+</div>

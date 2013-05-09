@@ -1,0 +1,28 @@
+<!-- //module/SanAuth/view/san-auth/auth/login.phtml -->
+<?php
+
+$form = $this->form;
+
+$form->setAttribute('action', $this->url('login/process',
+    			array('action'     => 'authenticate',
+    )
+));
+$form->prepare();
+?>
+<div class="content">
+    <h1>Login</h1>
+    <?php
+    echo $this->form()->openTag($form);
+    echo $this->formCollection($form);
+    echo $this->form()->closeTag();
+
+    if ($this->messages){
+        echo '<ul>';
+        foreach($this->messages as $message)
+        {
+            echo '<li>'.$message.'</li>';
+        }
+        echo '</ul>';
+    }
+    ?>
+</div>
