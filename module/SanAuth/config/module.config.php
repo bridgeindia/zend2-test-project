@@ -13,7 +13,7 @@ return array(
             'login' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/admin/login',
+                    'route'    => '/login',
                     'defaults' => array(
                         '__NAMESPACE__' => 'SanAuth\Controller',
                         'controller'    => 'Auth',
@@ -40,7 +40,7 @@ return array(
             'dashboard' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/admin/dashboard',
+                    'route'    => '/home',
                     'defaults' => array(
                         '__NAMESPACE__' => 'SanAuth\Controller',
                         'controller'    => 'Dashboard',
