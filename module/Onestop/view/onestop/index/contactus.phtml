@@ -1,0 +1,12 @@
+<?php
+
+    $form = $this->form;
+   // $form->setAttribute('action', $this->url('onestop', array('action' => 'aboutus')));
+    $form->prepare();
+	echo $this->form()->openTag($form);
+    echo $this->formRow($form->get('mail_to_receiver'));
+    echo $this->formRow($form->get('mail_sender'));
+	echo $this->formRow($form->get('mail_content'));
+	echo $this->formSubmit($form->get('mail_send'));
+    echo $this->form()->closeTag();
+?>
