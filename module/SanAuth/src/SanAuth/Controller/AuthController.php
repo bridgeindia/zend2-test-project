@@ -48,6 +48,8 @@ class AuthController extends AbstractActionController
     }
     public function loginAction()
     {
+	   $auth  = $this->getServiceLocator()
+                 ->get('AuthService')->hasIdentity();
         //if already login, redirect to success page 
         if ($this->getAuthService()->hasIdentity()){
             return $this->redirect()->toRoute('dashboard');

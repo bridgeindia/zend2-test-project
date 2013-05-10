@@ -64,6 +64,10 @@
 .mainnav{
 	margin-left:200px;
 }
+.containerContent{
+	margin-top:200px;
+	margin-left:200px;
+}
 </style>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
@@ -113,12 +117,20 @@
 							
 							</li>
 							<li class="active"><a href="<?php echo $this->url('home') ?>onestop/contactus"><?php echo $this->translate('Contact Us') ?></a></li>
+							<?php 
+							if($this->auth){
+								?>
+						<li class="logout"><a href="<?php echo $this->url('login/process', array('action'=>'logout')); ?>">Logout</a></li>
+						<?php } ?>
+						
+						
                         </ul>
                     </div><!--/.nav-collapse -->
             </div>
         </div>
         <div class="containerContent">
-            <?php echo $this->content; ?>
+            <?php 
+			 echo $this->content; ?>
             <hr>
             <footer>
                

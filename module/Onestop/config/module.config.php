@@ -58,6 +58,18 @@ return array(
             ),
 			
 			
+			 'login' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/onestop/login',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'SanAuth\Controller',
+                        'controller'    => 'Auth',
+                        'action'        => 'login',
+                    ),
+                ),
+			),			
+			
 			 'contactus' => array(
                 'type'    => 'Literal',
                 'options' => array(
@@ -90,6 +102,16 @@ return array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
         ),
+		
+    ),
+	
+	 'service_manager' => array(
+        'Zend\Authentication\AuthenticationService' => function($sm) {
+            $authService = new \Zend\Authentication\AuthenticationService();
+            $authService->setStorage(new \Zend\Authentication\Storage\Session('user', 'details'));
+
+            return $authService;
+        },
     ),
     'translator' => array(
         'locale' => 'en_US',

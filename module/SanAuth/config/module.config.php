@@ -66,6 +66,16 @@ return array(
             
         ),
     ),
+	
+	 'service_manager' => array(
+        'Zend\Authentication\AuthenticationService' => function($sm) {
+            $authService = new \Zend\Authentication\AuthenticationService();
+            $authService->setStorage(new \Zend\Authentication\Storage\Session('user', 'details'));
+
+            return $authService;
+        },
+    ),
+	
     'view_manager' => array(
         'template_path_stack' => array(
             'SanAuth' => __DIR__ . '/../view',
