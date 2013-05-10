@@ -34,6 +34,10 @@ return array(
                         'action'        => 'index',
                     ),
                 ),
+				
+				
+				
+				
                 'may_terminate' => true,
                 'child_routes' => array(
                     'default' => array(
@@ -52,6 +56,7 @@ return array(
             ),
         ),
     ),
+	
     'service_manager' => array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',

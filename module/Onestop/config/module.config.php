@@ -68,7 +68,19 @@ return array(
                         'action'        => 'login',
                     ),
                 ),
-			),			
+			),		
+			
+			 'administrator' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/onestop/admin',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'SanAuth\Controller',
+                        'controller'    => 'Dashboard',
+                        'action'        => 'index',
+                    ),
+                ),
+			),	
 			
 			 'contactus' => array(
                 'type'    => 'Literal',
