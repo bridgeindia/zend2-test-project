@@ -4,12 +4,11 @@
  * Controller file for adding, editing, deleting 
  * and viewing the categories
  */
-namespace Onestop\Controller;
+namespace Admin\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
- use Onestop\Model\Contactmodel;  
-use Onestop\Form\ContactForm;
+ 
 
 class IndexController extends AbstractActionController
 {
@@ -17,7 +16,7 @@ class IndexController extends AbstractActionController
 
     public function indexAction()
     {
-	  
+	  $this->layout('layout/layout');
 	  $auth  = $this->getServiceLocator()
                  ->get('AuthService')->hasIdentity();
 				 

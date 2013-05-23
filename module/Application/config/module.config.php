@@ -15,7 +15,7 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'SanAuth\Controller\Auth',
+                       'controller' => 'SanAuth\Controller\Auth',
                         'action'     => 'login',
                     ),
                 ),
@@ -35,6 +35,7 @@ return array(
                     ),
                 ),
 				
+				 
 				
 				
 				
@@ -57,6 +58,8 @@ return array(
         ),
     ),
 	
+	
+
     'service_manager' => array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',

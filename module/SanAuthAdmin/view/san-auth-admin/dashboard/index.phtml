@@ -1,0 +1,20 @@
+<!-- //module/SanAuth/view/san-auth/success/index.phtml -->
+<div class="main-nav">
+    <ul class="nav">
+        <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+        <li class="active"><a href="<?php echo $this->url('aboutus') ?>"><?php echo $this->translate('About Us') ?></a></li>
+        <li class="active"><a href="<?php echo $this->url('employee') ?>"><?php echo $this->translate('Employee') ?></a></li>
+        <li class="active"><a href="<?php echo $this->url('message') ?>"><?php echo $this->translate('Messages ') ?></a></li>
+        <li class="logout"><a href="<?php echo $this->url('login/process', array('action'=>'logout')); ?>">Logout</a></li>
+        
+    </ul>
+</div><!--/.nav-collapse -->
+<li><a href="<?php echo $this->url('checkin',array('action' => 'checkIn')); ?>">CHECK IN</a></li>
+<div class="content">
+    <ul>
+        <li><a href="<?php echo $this->url('category',array('action' => 'index') ); ?>">Manage categories</a></li>
+        <li><a href="<?php echo $this->url('employee', array('action' => 'index')); ?>">Manage employees</a></li>
+        <li><a href="<?php echo $this->url('message', array('action' => 'index')); ?>">Messages</a></li>
+     </ul>
+    
+</div>

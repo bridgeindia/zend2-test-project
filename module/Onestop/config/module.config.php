@@ -37,6 +37,7 @@ return array(
 					
 				),
 				
+				 
 				
 						
 				
@@ -58,17 +59,7 @@ return array(
             ),
 			
 			
-			 'login' => array(
-                'type'    => 'Literal',
-                'options' => array(
-                    'route'    => '/onestop/login',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'SanAuth\Controller',
-                        'controller'    => 'Auth',
-                        'action'        => 'login',
-                    ),
-                ),
-			),		
+			
 			
 			 'administrator' => array(
                 'type'    => 'Literal',
@@ -81,6 +72,20 @@ return array(
                     ),
                 ),
 			),	
+			
+			
+			
+			 'login' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/onestop/login',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'SanAuth\Controller',
+                        'controller'    => 'Auth',
+                        'action'        => 'login',
+                    ),
+                ),
+			),		
 			
 			 'contactus' => array(
                 'type'    => 'Literal',
